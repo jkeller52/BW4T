@@ -1,58 +1,108 @@
 import pyautogui
 import os
 
-screenWidth, screenHeight = pyautogui.size()
-#print(screenWidth, screenHeight)
-
 #User sets map upon program start --> can change later (need function/button to do so)
-Map = input("Enter the map code (Ex: Pilot1")
-roomNumber = input("Enter the Room Letter and Number (ex: A2):")
+
+#Need: position above info in function arguments!
+#goal: main functions work for each map nav states.
+#think about how wizard of oz will work... reading text commands from 
+
+class mapNavigation:
+	
+	def go_to_dropzone(mapvar,destination):
+		if mapvar == map4:
+			dz = (1073, 110)
+			goto_dz = (879,55)
+
+		 	A1 = (609, 103)
+		 	goto_A1 = (665, 67)
+
+		 	A2 = (617,218)
+			goto_A2 = (655,70)
+
+			A5 = (619,544)
+			goto_A5 = (627,95)
+
+			C3 = (840, 325)
+			goto_C3 = (825,80)
+
+			C5 = (841,539)
+		 	goto_C5 = (823,105)
+
+		 	D3 = (960, 332)
+			goto_D3 = (803, 79)
+
+			E3 = (1071,339)
+			goto_E3 = (755, 85)
+
+			E5 = (1051,555)
+			goto_E5 = (867,102)
+			
+		if destination == dz:
+			pyautogui.rightClick(dz) 
+			time.sleep(0.1)
+			pyautogui.rightClick(goto_dz) 
+
+		if destination == A1:
+			pyautogui.rightClick(A1)
+			time.sleep(0.1)
+			pyautogui.rightClick(goto_A1)
+
+
+		if destination == A:
+			pyautogui.rightClick(A5)
+			time.sleep(0.1)
+			pyautogui.rightClick(goto_A5)
 
 
 
-#example test to pass a1 into pyautogui.rightClick
-A1 = (x=150, y=1200)
+		# 	if destination == C5 
+		# 		
 
-dropzoneX, dropzoneY
+			if destination == E5:	
+				
 
+				
 
+				
 
-def go_to_room(roomNumber):
-#right click over target room
-	pyautogui.rightClick(x=moveToX, y=moveToY)
-	pyautogui.PAUSE(.001)
-#left click "Go to RoomX#" 
-	pyautogui.click(x=moveToX, y=moveToY, clicks=1, interval=secs_between_clicks, button='left')
-	pyautogui.PAUSE(.001)
+		# 		
 
-def go_to_dropzone():
-#scroll and right click over "drop zone"
-	pyautogui.rightClick(x=moveToX, y=moveToY)
-	pyautogui.PAUSE(.001)
-	#left click go to DropZone
-	pyautogui.click(x=moveToX, y=moveToY, clicks=1, interval=secs_between_clicks, button='left')
+		# 		
 
 
+		# 	else:
+		# 		print("Error")
+		# if mapvar == map5:
 
-def comms_block_dropped_off():
-#
-	pyautogui.click(x=moveToX, y=moveToY, clicks=1, interval=secs_between_clicks, button='right')
-	pyautogui.PAUSE(.001)
-	pyautogui.click(x=moveToX, y=moveToY, clicks=1, interval=secs_between_clicks, button='left')
-
-
-
-while
+# 		pyautogui.rightClick(destination)
+# 		time.sleep(0.1)
+# 		pyautogui.leftClick(goto_dz)
 
 
-###Inputs will help create a system where the researcher can use the tool dynamically
-print()
+# 	def go_to_room(room_coords,coords_goto_room):
+# 		#room_coords= []
+# 		#goto_room = []
+# 		pyautogui.rightClick(coords_dz) #click "JacobMap6"
+# 		time.sleep(0.1)
+# 		pyautogui.leftClick(coords_goto_dz)
 
 
-###MAP Logic
-if Map == Pilot1:
-	with open("BW4T/BW4T-Clicker/Pilot1.csv") as file:
+# #	pyautogui.clickRel() #NEED to create room nav variables to be RELATIVE to current position of mouse.
 
+# 	def drop_block():
+# 		print("yes")
+	
+# 	def pickup_block():
+# 		print("yes")
+
+# 	def robot_comms():
+# 		print("yes")
+
+go_to_dropzone(mapvar, destination)
+
+
+#with open("/Users/Jacob/BW4T/maps/JacobMap4.map") as map4:
 
 
 
